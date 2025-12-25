@@ -5,7 +5,7 @@ import KhipuCircle from "../assets/khipu-circle.svg";
 
 <!-- Desktop Navigation -->
 <nav
-  class="fixed hidden w-full items-center justify-between gap-x-4 px-12 py-4 inset-x-0 md:flex"
+  class="fixed inset-x-0 hidden w-full items-center justify-between gap-x-4 px-12 py-4 md:flex"
 >
   <!-- Logo and Text -->
   <div class="flex shrink-0 items-center gap-x-8">
@@ -19,7 +19,7 @@ import KhipuCircle from "../assets/khipu-circle.svg";
 
   <!-- Navigation Links  -->
   <div
-    class="text-khipu-white flex min-w-0 flex-1 items-center justify-center gap-x-8 font-bold flex-wrap"
+    class="text-khipu-white flex min-w-0 flex-1 flex-wrap items-center justify-center gap-x-8 font-bold"
   >
     <a href="/">About</a>
     <a href="/">Speakers</a>
@@ -28,13 +28,13 @@ import KhipuCircle from "../assets/khipu-circle.svg";
 
   <div class="relative flex shrink-0 items-center justify-center">
     <KhipuCircle
-      class="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 h-[220px] w-[220px] text-khipu-orange"
+      class="text-khipu-orange pointer-events-none absolute top-1/2 left-1/2 -z-10 h-[220px] w-[220px] -translate-x-1/2 -translate-y-1/2"
       preserveAspectRatio="xMidYMid meet"
       role="img"
       aria-label="Khipu Circle"
     />
     <button
-      class="bg-khipu-orange text-khipu-white rounded-full px-8 py-4 font-bold text-nowrap relative z-10"
+      class="bg-khipu-orange text-khipu-white relative z-10 rounded-full px-8 py-4 font-bold text-nowrap"
     >
       Register Now!
     </button>
