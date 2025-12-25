@@ -28,10 +28,11 @@ import Close from "../assets/close.svg";
 <!-- Mobile Menu Overlay -->
 <div
   id="mobile-menu"
-  class="bg-khipu-black fixed inset-0 hidden max-h-screen p-8"
+  class="bg-khipu-black mobile-menu-overlay fixed inset-0 hidden max-h-screen p-8"
+  data-state="closed"
 >
   <!-- Container -->
-  <div class="flex flex-col justify-center gap-y-8">
+  <div class="mobile-menu-panel flex flex-col justify-center gap-y-8">
     <!-- Close Button -->
     <button id="close-menu-button" class="flex items-center justify-end p-2">
       <Close
@@ -59,3 +60,90 @@ import Close from "../assets/close.svg";
     </div>
   </div>
 </div>
+
+<style>
+  .mobile-menu-overlay {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 180ms ease;
+  }
+
+  .mobile-menu-panel {
+    opacity: 0;
+    transform: translateX(16px);
+    transition:
+      transform 220ms ease,
+      opacity 180ms ease;
+  }
+
+  .mobile-menu-overlay[data-state="open"] {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .mobile-menu-overlay[data-state="open"] .mobile-menu-panel {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .mobile-menu-overlay,
+    .mobile-menu-panel {
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  const menu = document.querySelector<HTMLElement>("#mobile-menu");
+  const panel = menu?.querySelector<HTMLElement>(".mobile-menu-panel") ?? null;
+  const openBtn =
+    document.querySelector<HTMLButtonElement>("#open-menu-button");
+  const closeBtn =
+    document.querySelector<HTMLButtonElement>("#close-menu-button");
+
+  const OPEN_STATE = "open";
+  const CLOSED_STATE = "closed";
+
+  let closeTimeoutId: number | undefined;
+
+  function openMenu() {
+    if (!menu) return;
+    if (closeTimeoutId) window.clearTimeout(closeTimeoutId);
+    menu.classList.remove("hidden");
+    // Next frame so the transition runs after `hidden` is removed.
+    requestAnimationFrame(() => {
+      menu.setAttribute("data-state", OPEN_STATE);
+    });
+  }
+
+  function closeMenu() {
+    if (!menu) return;
+    if (closeTimeoutId) window.clearTimeout(closeTimeoutId);
+
+    menu.setAttribute("data-state", CLOSED_STATE);
+
+    const finish = () => {
+      if (menu.getAttribute("data-state") === CLOSED_STATE) {
+        menu.classList.add("hidden");
+      }
+    };
+
+    const target = panel ?? menu;
+    const onEnd = (e: Event) => {
+      if (e.target !== target) return;
+      target.removeEventListener("transitionend", onEnd);
+      finish();
+    };
+
+    // If transitions are disabled (e.g. prefers-reduced-motion), `transitionend` may not fire.
+    target.addEventListener("transitionend", onEnd);
+    closeTimeoutId = window.setTimeout(() => {
+      target.removeEventListener("transitionend", onEnd);
+      finish();
+    }, 320);
+  }
+
+  openBtn?.addEventListener("click", openMenu);
+  closeBtn?.addEventListener("click", closeMenu);
+</script>
