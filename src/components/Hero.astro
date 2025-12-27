@@ -1,5 +1,7 @@
 ---
 // Hero component with responsive background images and overlay
+import heroDesktop from "../assets/hero-image-desktop.webp";
+import heroMobile from "../assets/hero-image-mobile.webp";
 ---
 
 <section
@@ -7,13 +9,13 @@
 >
   <!-- Desktop Background Image -->
   <img
-    src="/hero-image-desktop.webp"
+    src={heroDesktop.src}
     alt="KhipuX Quito Conference"
     class="absolute inset-0 hidden h-full w-full object-cover md:block"
   />
   <!-- Mobile Background Image -->
   <img
-    src="/hero-image-mobile.webp"
+    src={heroMobile.src}
     alt="KhipuX Quito Conference"
     class="absolute inset-0 block h-full w-full object-cover md:hidden"
   />
