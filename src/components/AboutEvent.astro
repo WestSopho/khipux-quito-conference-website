@@ -1,0 +1,40 @@
+---
+import horizontalBar from "../assets/horizontal-lateral-bar.svg";
+import verticalBar from "../assets/vertical-lateral-bar.svg";
+---
+
+<section class="bg-khipu-gray text-khipu-white flex flex-col items-center justify-center md:flex-row md:items-stretch gap-y-8 px-4 py-8 gap-x-8">
+    <!-- Mobile: horizontal bar, partial width -->
+    <img src={horizontalBar.src} alt="Lateral Bar" class="md:hidden w-3/4 h-auto" />
+    <!-- Desktop: vertical bar -->
+    <img src={verticalBar.src} alt="Lateral Bar" class="hidden md:block w-24 h-auto shrink-0" />
+    <!-- Content -->
+    <div class="text-xl font-semibold text-center md:text-left flex flex-col justify-center gap-y-4">
+        <h2 class="text-3xl font-bold md:text-6xl md:leading-tight">About the event</h2>
+        <p class="text-lg md:text-2xl">
+            KHIPUx Quito is a 3-day hybrid event designed to advance the role of Artificial Intelligence in biological and medical imaging across Latin America.
+        </p>
+        <p class="text-lg md:text-2xl">
+            Hosted by <span class="text-udla-red">Universidad de Las Américas (UDLA)</span>, it brings together students and early-career researchers from fields such as biology, medicine, data science, and AI.Participants will engage in expert-led lectures, technical workshops, poster sessions, and a collaborative hackathon developing open-source AI tools for regional health challenges.
+        </p>
+        <ul class="list-disc list-inside">
+            <p class="text-lg font-semibold md:text-2xl">Key Themes:</p>
+            <li>
+                AI for 
+                <span class="font-semibold">bioimage</span> and 
+                <span class="font-semibold">medical imaging</span>
+            </li>
+            <li>
+                <span class="font-semibold">Ethical AI</span> and 
+                <span class="font-semibold">data sovereignty</span>
+            </li>
+            <li>
+                <span class="font-semibold">Open science</span> and 
+                <span class="font-semibold">regional collaboration</span>
+            </li>
+            <li>
+                <span class="font-semibold">Empowering Latin American talent</span>
+            </li>
+        </ul>
+    </div>
+</section>
