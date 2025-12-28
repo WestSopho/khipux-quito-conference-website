@@ -1,0 +1,172 @@
+---
+const days = [
+  {
+    name: "Day 1",
+    theme: "Foundations & Regional Landscape",
+    sessions: [
+      {
+        blockTime: "7:00 am",
+        events: [
+          { time: "7:00 AM - 8:30AM", title: "Opening & Welcome" },
+          {
+            time: "7:00 AM - 8:30AM",
+            title:
+              "Keynote Lecture: The future of AI in biomedical research in Latin America",
+          },
+          {
+            time: "7:00 AM - 8:30AM",
+            title:
+              "Panel Discussion: Building regional capacity in AI for bio and medical imaging",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    name: "Day 2",
+    theme: "Hands-On Workshops",
+    sessions: [
+      {
+        blockTime: "9:00 am",
+        events: [
+          {
+            time: "9:00 AM - 12:00PM",
+            title:
+              "Workshop: Introduction to Deep Learning for Medical Imaging",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    name: "Day 3",
+    theme: "Hackathon & Closing",
+    sessions: [
+      {
+        blockTime: "8:00 am",
+        events: [
+          {
+            time: "8:00 AM - 5:00PM",
+            title:
+              "Hackathon: Open-source AI tools for regional health challenges",
+          },
+        ],
+      },
+    ],
+  },
+];
+---
+
+<section class="bg-khipu-gray text-khipu-white px-4 py-12 md:px-16">
+  <h2 class="mb-10 text-center text-4xl font-bold md:text-5xl">
+    Program Overview
+  </h2>
+
+  <!-- Day Tabs -->
+  <div class="mb-2 flex gap-6">
+    {
+      days.map((day, index) => (
+        <button
+          class:list={[
+            "day-tab text-2xl font-bold transition-colors md:text-3xl",
+            index === 0
+              ? "text-khipu-orange"
+              : "text-khipu-white hover:text-khipu-orange",
+          ]}
+          data-day={index}
+        >
+          {day.name}
+        </button>
+      ))
+    }
+  </div>
+
+  <!-- Separator Line -->
+  <div class="mb-8 h-px w-full bg-white/40"></div>
+
+  <!-- Day Content Panels Container -->
+  <div class="h-80 overflow-y-auto md:h-96">
+    {
+      days.map((day, index) => (
+        <div
+          class:list={[
+            "day-panel transition-opacity duration-300 ease-out",
+            index === 0 ? "opacity-100" : "hidden opacity-0",
+          ]}
+          data-day-panel={index}
+        >
+          {/* Day Theme */}
+          <h3 class="mb-8 text-center text-xl font-bold md:text-2xl">
+            {day.theme}
+          </h3>
+
+          {/* Sessions */}
+          {day.sessions.map((session) => (
+            <div class="mb-8">
+              {/* Time Block Header */}
+              <div class="mb-6 flex items-center gap-4">
+                <div class="h-px flex-1 bg-white/40" />
+                <span class="text-xl italic md:text-2xl">
+                  {session.blockTime}
+                </span>
+                <div class="h-px flex-1 bg-white/40" />
+              </div>
+
+              {/* Events */}
+              <div class="flex flex-col gap-4">
+                {session.events.map((event) => (
+                  <div class="flex gap-6 md:gap-12">
+                    <span class="w-32 shrink-0 text-sm text-white/80 md:w-40 md:text-base">
+                      {event.time}
+                    </span>
+                    <span class="text-lg md:text-xl">{event.title}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<script>
+  const tabs = document.querySelectorAll(".day-tab");
+  const panels = document.querySelectorAll(".day-panel");
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const dayIndex = tab.getAttribute("data-day");
+      const targetPanel = document.querySelector(
+        `[data-day-panel="${dayIndex}"]`,
+      );
+
+      // Update tabs
+      tabs.forEach((t) => {
+        t.classList.remove("text-khipu-orange");
+        t.classList.add("text-khipu-white");
+      });
+      tab.classList.add("text-khipu-orange");
+      tab.classList.remove("text-khipu-white");
+
+      // Fade out all panels
+      panels.forEach((p) => {
+        p.classList.add("opacity-0");
+        p.classList.remove("opacity-100");
+      });
+
+      // After fade out, hide all and show target with fade in
+      setTimeout(() => {
+        panels.forEach((p) => p.classList.add("hidden"));
+        targetPanel?.classList.remove("hidden");
+
+        // Trigger reflow for animation
+        requestAnimationFrame(() => {
+          targetPanel?.classList.remove("opacity-0");
+          targetPanel?.classList.add("opacity-100");
+        });
+      }, 150);
+    });
+  });
+</script>
