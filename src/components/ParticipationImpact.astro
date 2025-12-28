@@ -5,87 +5,120 @@ import khipuSquareSvg from "../assets/khipu-square.svg";
 ---
 
 <section class="bg-khipu-black text-khipu-white px-6 py-16 md:px-16 lg:px-24">
-  <h2 class="text-center text-4xl font-bold md:text-5xl mb-16">
+  <h2 class="mb-16 text-center text-4xl font-bold md:text-5xl">
     Participation and Impact
   </h2>
 
   <!-- First Block: Inclusion, Equity, Diversity -->
-  <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12 mb-20">
+  <div class="mb-20 flex flex-col items-center gap-8 md:flex-row md:gap-12">
     <!-- Image for mobile (shown above text on mobile) -->
-    <div class="md:hidden w-64 shrink-0">
-      <Khipu class="w-full h-auto text-khipu-orange" />
+    <div class="w-64 shrink-0 md:hidden">
+      <Khipu class="text-khipu-orange h-auto w-full" />
     </div>
-    
+
     <!-- Text Content -->
     <div class="flex-1 space-y-6">
-      <p class="text-lg md:text-xl leading-relaxed font-semibold">
-        KHIPUx Quito prioritizes <span class="text-khipu-orange font-bold">inclusion</span>, 
-        <span class="text-khipu-orange font-bold">equity</span>, and 
-        <span class="text-khipu-orange font-bold">diversity</span>. Efforts include:
+      <p class="text-lg leading-relaxed font-semibold md:text-xl">
+        KHIPUx Quito prioritizes <span class="text-khipu-orange font-bold"
+          >inclusion</span
+        >,
+        <span class="text-khipu-orange font-bold">equity</span>, and
+        <span class="text-khipu-orange font-bold">diversity</span>. Efforts
+        include:
       </p>
-      
-      <div class="space-y-4 ml-2">
+
+      <div class="ml-2 space-y-4">
         <div class="flex items-start gap-4">
-          <img src={khipuSquareSvg.src} alt="" class="w-8 h-8 shrink-0 mt-0.5" />
-          <p class="text-base md:text-lg leading-relaxed font-semibold">
-            Free registration for all full-time students and those with demonstrated financial need.
+          <img
+            src={khipuSquareSvg.src}
+            alt=""
+            class="mt-0.5 h-8 w-8 shrink-0"
+          />
+          <p class="text-base leading-relaxed font-semibold md:text-lg">
+            Free registration for all full-time students and those with
+            demonstrated financial need.
           </p>
         </div>
         <div class="flex items-start gap-4">
-          <img src={khipuSquareSvg.src} alt="" class="w-8 h-8 shrink-0 mt-0.5" />
-          <p class="text-base md:text-lg leading-relaxed font-semibold">
-            Gender balance and interdisciplinary diversity among speakers and participants.
+          <img
+            src={khipuSquareSvg.src}
+            alt=""
+            class="mt-0.5 h-8 w-8 shrink-0"
+          />
+          <p class="text-base leading-relaxed font-semibold md:text-lg">
+            Gender balance and interdisciplinary diversity among speakers and
+            participants.
           </p>
         </div>
       </div>
     </div>
-    
+
     <!-- Image for desktop (shown on the right) -->
-    <div class="hidden md:block w-72 lg:w-80 shrink-0">
-      <Khipu class="w-full h-auto text-khipu-orange" />
+    <div class="hidden w-72 shrink-0 md:block lg:w-80">
+      <Khipu class="text-khipu-orange h-auto w-full" />
     </div>
   </div>
 
   <!-- Second Block: First National Platform -->
-  <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+  <div class="flex flex-col items-center gap-8 md:flex-row md:gap-12">
     <!-- Image (shown above text on mobile, on left for desktop) -->
-    <div class="w-52 md:w-64 lg:w-72 shrink-0">
-      <KhipuCircle class="w-full h-auto text-khipu-orange" />
+    <div class="w-52 shrink-0 md:w-64 lg:w-72">
+      <KhipuCircle class="text-khipu-orange h-auto w-full" />
     </div>
-    
+
     <!-- Text Content -->
     <div class="flex-1 space-y-6">
-      <p class="text-lg md:text-xl leading-relaxed font-semibold">
-        KHIPUx Quito will serve as the <span class="text-khipu-orange font-bold">first national platform</span> to integrate AI and biomedical imaging in Ecuador, catalyzing lasting change through:
+      <p class="text-lg leading-relaxed font-semibold md:text-xl">
+        KHIPUx Quito will serve as the <span class="text-khipu-orange font-bold"
+          >first national platform</span
+        > to integrate AI and biomedical imaging in Ecuador, catalyzing lasting change
+        through:
       </p>
-      
+
       <!-- Bullet Points with khipu-square icons -->
-      <div class="space-y-5 ml-2">
+      <div class="ml-2 space-y-5">
         <div class="flex items-start gap-4">
-          <img src={khipuSquareSvg.src} alt="" class="w-8 h-8 shrink-0 mt-0.5" />
-          <p class="text-base md:text-lg leading-relaxed font-semibold">
+          <img
+            src={khipuSquareSvg.src}
+            alt=""
+            class="mt-0.5 h-8 w-8 shrink-0"
+          />
+          <p class="text-base leading-relaxed font-semibold md:text-lg">
             Creation of a regional community for AI in health imaging.
           </p>
         </div>
-        
+
         <div class="flex items-start gap-4">
-          <img src={khipuSquareSvg.src} alt="" class="w-8 h-8 shrink-0 mt-0.5" />
-          <p class="text-base md:text-lg leading-relaxed font-semibold">
+          <img
+            src={khipuSquareSvg.src}
+            alt=""
+            class="mt-0.5 h-8 w-8 shrink-0"
+          />
+          <p class="text-base leading-relaxed font-semibold md:text-lg">
             Increased visibility of Latin American biomedical AI research.
           </p>
         </div>
-        
+
         <div class="flex items-start gap-4">
-          <img src={khipuSquareSvg.src} alt="" class="w-8 h-8 shrink-0 mt-0.5" />
-          <p class="text-base md:text-lg leading-relaxed font-semibold">
+          <img
+            src={khipuSquareSvg.src}
+            alt=""
+            class="mt-0.5 h-8 w-8 shrink-0"
+          />
+          <p class="text-base leading-relaxed font-semibold md:text-lg">
             Open-access educational resources on GitHub and Zenodo.
           </p>
         </div>
-        
+
         <div class="flex items-start gap-4">
-          <img src={khipuSquareSvg.src} alt="" class="w-8 h-8 shrink-0 mt-0.5" />
-          <p class="text-base md:text-lg leading-relaxed font-semibold">
-            New research collaborations, hackathon prototypes, and future workshops.
+          <img
+            src={khipuSquareSvg.src}
+            alt=""
+            class="mt-0.5 h-8 w-8 shrink-0"
+          />
+          <p class="text-base leading-relaxed font-semibold md:text-lg">
+            New research collaborations, hackathon prototypes, and future
+            workshops.
           </p>
         </div>
       </div>
