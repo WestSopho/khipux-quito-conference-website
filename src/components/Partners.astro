@@ -1,0 +1,68 @@
+---
+// Main sponsors (larger logos)
+import khipuLogo from "../assets/partners/khipu-official-logo.svg";
+import udlaLogo from "../assets/partners/udla-logo.svg";
+import uideLogo from "../assets/partners/uide-logo.svg";
+
+// Secondary sponsors (smaller logos)
+import diversaLogo from "../assets/partners/diversa-logo.svg";
+import galileoLogo from "../assets/partners/galileo-logo.svg";
+import ubaLogo from "../assets/partners/uba-logo.svg";
+---
+
+<section
+  class="bg-khipu-black text-khipu-white flex flex-col items-center px-6 py-16 md:px-16 lg:px-24"
+>
+  <h2 class="mb-12 text-center text-4xl font-bold italic md:text-5xl">
+    Institutional Partners
+  </h2>
+
+  <!-- Main Sponsors - Larger logos -->
+  <div
+    class="mb-12 flex w-full flex-wrap items-center justify-center gap-8 md:gap-12 lg:gap-16"
+  >
+    <img
+      src={khipuLogo.src}
+      alt="KHIPU"
+      loading="lazy"
+      class="h-auto w-full max-w-52 shrink md:max-w-64 lg:max-w-72"
+    />
+    <img
+      src={udlaLogo.src}
+      alt="UDLA - Universidad de Las Américas"
+      loading="lazy"
+      class="h-auto w-full max-w-52 shrink md:max-w-64 lg:max-w-72"
+    />
+    <img
+      src={uideLogo.src}
+      alt="UIDE - Universidad Internacional del Ecuador"
+      loading="lazy"
+      class="h-auto w-full max-w-52 shrink md:max-w-64 lg:max-w-72"
+    />
+  </div>
+
+  <!-- Secondary Sponsors - Smaller logos -->
+  <div
+    class="flex w-full flex-wrap items-center justify-center gap-6 md:gap-10 lg:gap-12"
+  >
+    <img
+      src={diversaLogo.src}
+      alt="Diversa"
+      loading="lazy"
+      class="h-auto w-full max-w-36 shrink md:max-w-44 lg:max-w-48"
+    />
+    <img
+      src={galileoLogo.src}
+      alt="Universidad Galileo"
+      loading="lazy"
+      class="h-auto w-full max-w-36 shrink md:max-w-44 lg:max-w-48"
+    />
+    <img
+      src={ubaLogo.src}
+      alt="UBA - Universidad de Buenos Aires"
+      loading="lazy"
+      class="h-auto w-full max-w-36 shrink md:max-w-44 lg:max-w-48"
+    />
+  </div>
+</section>
+
