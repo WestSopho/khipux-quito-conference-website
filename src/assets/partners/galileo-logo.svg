@@ -2,7 +2,7 @@
 <svg
    version="1.1"
    viewBox="0 0 249 256"
-   id="svg1"
+   id="svg4"
    sodipodi:docname="galileo-logo.svg"
    width="249"
    height="256"
@@ -12,9 +12,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <defs
-     id="defs1" />
+     id="defs4" />
   <sodipodi:namedview
-     id="namedview1"
+     id="namedview4"
      pagecolor="#ffffff"
      bordercolor="#000000"
      borderopacity="0.25"
@@ -30,9 +30,41 @@
      inkscape:window-x="-9"
      inkscape:window-y="-9"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg1" />
+     inkscape:current-layer="svg4" />
+  <g
+     stroke-width="2"
+     fill="none"
+     stroke-linecap="butt"
+     id="g2">
+    <path
+       stroke="#ddcdae"
+       vector-effect="non-scaling-stroke"
+       d="m 42.07,163.22 a 0.7,0.7 0 0 0 -0.7,-0.7 H 7.63 a 0.7,0.7 0 0 0 -0.7,0.7 v 0.04 a 0.7,0.7 0 0 0 0.7,0.7 h 33.74 a 0.7,0.7 0 0 0 0.7,-0.7 v -0.04"
+       id="path1" />
+    <path
+       stroke="#ddcdae"
+       vector-effect="non-scaling-stroke"
+       d="m 234.02,163.23 a 0.76,0.76 0 0 0 -0.76,-0.76 H 57.66 a 0.76,0.76 0 0 0 -0.76,0.76 v 0.04 a 0.76,0.76 0 0 0 0.76,0.76 h 175.6 a 0.76,0.76 0 0 0 0.76,-0.76 v -0.04"
+       id="path2" />
+  </g>
   <path
      fill="#ffffff"
-     d="M 249,0 V 256 H 0 V 0 Z"
-     id="path1" />
+     d="M 249,0 V 256 H 0 V 0 Z M 42.07,163.22 a 0.7,0.7 0 0 0 -0.7,-0.7 H 7.63 a 0.7,0.7 0 0 0 -0.7,0.7 v 0.04 a 0.7,0.7 0 0 0 0.7,0.7 h 33.74 a 0.7,0.7 0 0 0 0.7,-0.7 z m 191.95,0.01 a 0.76,0.76 0 0 0 -0.76,-0.76 H 57.66 a 0.76,0.76 0 0 0 -0.76,0.76 v 0.04 a 0.76,0.76 0 0 0 0.76,0.76 h 175.6 a 0.76,0.76 0 0 0 0.76,-0.76 z"
+     id="path3" />
+  <rect
+     fill="#bb9a5c"
+     x="6.9299998"
+     y="162.52"
+     width="35.139999"
+     height="1.4400001"
+     rx="0.69999999"
+     id="rect3" />
+  <rect
+     fill="#bb9a5c"
+     x="56.900002"
+     y="162.47"
+     width="177.12"
+     height="1.5599999"
+     rx="0.75999999"
+     id="rect4" />
 </svg>
