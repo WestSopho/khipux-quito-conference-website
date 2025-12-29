@@ -169,7 +169,11 @@ import Close from "../assets/close.svg";
   openBtn?.addEventListener("click", openMenu);
   closeBtn?.addEventListener("click", closeMenu);
 
-  // Handle mobile nav link clicks - smooth scroll and close menu
+  // Handle mobile nav link clicks - smooth scroll and close menu (respects reduced motion preference)
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
   const mobileNavLinks =
     document.querySelectorAll<HTMLAnchorElement>(".mobile-nav-link");
   mobileNavLinks.forEach((link) => {
@@ -185,7 +189,10 @@ import Close from "../assets/close.svg";
         // Scroll to target after a short delay to allow menu animation
         if (target) {
           setTimeout(() => {
-            target.scrollIntoView({ behavior: "smooth", block: "start" });
+            target.scrollIntoView({
+              behavior: prefersReducedMotion ? "auto" : "smooth",
+              block: "start",
+            });
           }, 200);
         }
       }
