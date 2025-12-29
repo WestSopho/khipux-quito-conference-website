@@ -8,23 +8,28 @@ import Close from "../assets/close.svg";
 <nav class="bg-khipu-black sticky top-0 z-50 py-4 md:hidden">
   <div class="content-container flex items-center">
     <div class="flex grow items-center justify-center gap-x-8">
-    <KhipuLogo
-      class="text-khipu-orange h-20 w-auto origin-center -rotate-90"
-      role="img"
-      aria-label="Khipu Logo"
-    />
-    <p class="text-khipu-white text-2xl font-bold text-nowrap">KHIPUx Quito</p>
-  </div>
+      <KhipuLogo
+        class="text-khipu-orange h-20 w-auto origin-center -rotate-90"
+        role="img"
+        aria-label="Khipu Logo"
+      />
+      <p class="text-khipu-white text-2xl font-bold text-nowrap">
+        KHIPUx Quito
+      </p>
+    </div>
     <!-- Arrow Icon for the menu -->
     <div class="flex items-center justify-center">
       <button
         id="open-menu-button"
         class="text-khipu-white flex items-center justify-end p-2 font-bold"
       >
-        <Bars class="text-khipu-orange h-8 w-auto" role="img" aria-label="Bars" />
+        <Bars
+          class="text-khipu-orange h-8 w-auto"
+          role="img"
+          aria-label="Bars"
+        />
       </button>
     </div>
-  </div>
   </div>
 </nav>
 
@@ -48,10 +53,24 @@ import Close from "../assets/close.svg";
     <div
       class="text-khipu-white flex flex-col gap-y-4 text-end text-2xl font-bold uppercase"
     >
-      <a href="#about" class="mobile-nav-link hover:text-khipu-orange transition-colors">About</a>
-      <a href="#speakers" class="mobile-nav-link hover:text-khipu-orange transition-colors">Speakers</a>
-      <a href="#schedule" class="mobile-nav-link hover:text-khipu-orange transition-colors">Schedule</a>
-      <a href="#register" class="mobile-nav-link text-khipu-orange">Register Now!</a>
+      <a
+        href="#about"
+        class="mobile-nav-link hover:text-khipu-orange transition-colors"
+        >About</a
+      >
+      <a
+        href="#speakers"
+        class="mobile-nav-link hover:text-khipu-orange transition-colors"
+        >Speakers</a
+      >
+      <a
+        href="#schedule"
+        class="mobile-nav-link hover:text-khipu-orange transition-colors"
+        >Schedule</a
+      >
+      <a href="#register" class="mobile-nav-link text-khipu-orange"
+        >Register Now!</a
+      >
     </div>
     <!-- Big Khipu Logo -->
     <div class="flex items-center justify-center">
@@ -151,21 +170,22 @@ import Close from "../assets/close.svg";
   closeBtn?.addEventListener("click", closeMenu);
 
   // Handle mobile nav link clicks - smooth scroll and close menu
-  const mobileNavLinks = document.querySelectorAll<HTMLAnchorElement>('.mobile-nav-link');
+  const mobileNavLinks =
+    document.querySelectorAll<HTMLAnchorElement>(".mobile-nav-link");
   mobileNavLinks.forEach((link) => {
-    link.addEventListener('click', (e) => {
-      const href = link.getAttribute('href');
-      if (href?.startsWith('#')) {
+    link.addEventListener("click", (e) => {
+      const href = link.getAttribute("href");
+      if (href?.startsWith("#")) {
         e.preventDefault();
         const target = document.querySelector(href);
-        
+
         // Close the menu first
         closeMenu();
-        
+
         // Scroll to target after a short delay to allow menu animation
         if (target) {
           setTimeout(() => {
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
           }, 200);
         }
       }

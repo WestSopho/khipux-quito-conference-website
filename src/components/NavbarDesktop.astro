@@ -4,56 +4,71 @@ import KhipuCircle from "../assets/khipu-circle.svg";
 ---
 
 <!-- Desktop Navigation -->
-<nav class="bg-khipu-black sticky top-0 z-50 hidden w-full overflow-hidden py-4 md:block">
+<nav
+  class="bg-khipu-black sticky top-0 z-50 hidden w-full overflow-hidden py-4 md:block"
+>
   <div class="content-container flex items-center gap-x-4">
     <!-- Logo and Text -->
     <div class="flex shrink-0 items-center gap-x-8">
-    <KhipuLogo
-      class="text-khipu-orange h-20 w-auto origin-center -rotate-90"
-      role="img"
-      aria-label="Khipu Logo"
-    />
-    <p class="text-khipu-white text-2xl font-bold md:text-3xl">KHIPUx Quito</p>
-  </div>
+      <KhipuLogo
+        class="text-khipu-orange h-20 w-auto origin-center -rotate-90"
+        role="img"
+        aria-label="Khipu Logo"
+      />
+      <p class="text-khipu-white text-2xl font-bold md:text-3xl">
+        KHIPUx Quito
+      </p>
+    </div>
 
-  <!-- Navigation Links  -->
-  <div
-    class="text-khipu-white flex min-w-0 flex-1 flex-wrap items-center justify-center gap-x-8 text-lg font-bold"
-  >
-    <a href="#about" class="nav-link hover:text-khipu-orange transition-colors">About</a>
-    <a href="#speakers" class="nav-link hover:text-khipu-orange transition-colors">Speakers</a>
-    <a href="#schedule" class="nav-link hover:text-khipu-orange transition-colors">Schedule</a>
-  </div>
-
-  <div class="relative flex shrink-0 items-center justify-center">
-    <KhipuCircle
-      class="text-khipu-orange pointer-events-none absolute top-1/2 left-1/2 -z-10 h-[220px] w-[220px] -translate-x-1/2 -translate-y-1/2"
-      preserveAspectRatio="xMidYMid meet"
-      role="img"
-      aria-label="Khipu Circle"
-    />
-    <a
-      href="#register"
-      class="nav-link bg-khipu-orange text-khipu-white relative z-10 rounded-full px-8 py-4 font-bold text-nowrap hover:opacity-90 transition-opacity"
+    <!-- Navigation Links  -->
+    <div
+      class="text-khipu-white flex min-w-0 flex-1 flex-wrap items-center justify-center gap-x-8 text-lg font-bold"
     >
-      Register Now!
-    </a>
-  </div>
+      <a
+        href="#about"
+        class="nav-link hover:text-khipu-orange transition-colors">About</a
+      >
+      <a
+        href="#speakers"
+        class="nav-link hover:text-khipu-orange transition-colors">Speakers</a
+      >
+      <a
+        href="#schedule"
+        class="nav-link hover:text-khipu-orange transition-colors">Schedule</a
+      >
+    </div>
+
+    <div class="relative flex shrink-0 items-center justify-center">
+      <KhipuCircle
+        class="text-khipu-orange pointer-events-none absolute top-1/2 left-1/2 -z-10 h-[220px] w-[220px] -translate-x-1/2 -translate-y-1/2"
+        preserveAspectRatio="xMidYMid meet"
+        role="img"
+        aria-label="Khipu Circle"
+      />
+      <a
+        href="#register"
+        class="nav-link bg-khipu-orange text-khipu-white relative z-10 rounded-full px-8 py-4 font-bold text-nowrap transition-opacity hover:opacity-90"
+      >
+        Register Now!
+      </a>
+    </div>
   </div>
 </nav>
 
 <script>
   // Smooth scroll for desktop nav links
-  document.querySelectorAll<HTMLAnchorElement>('nav.md\\:block .nav-link').forEach((link) => {
-    link.addEventListener('click', (e) => {
-      const href = link.getAttribute('href');
-      if (href?.startsWith('#')) {
-        e.preventDefault();
-        const target = document.querySelector(href);
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  document
+    .querySelectorAll<HTMLAnchorElement>("nav.md\\:block .nav-link")
+    .forEach((link) => {
+      link.addEventListener("click", (e) => {
+        const href = link.getAttribute("href");
+        if (href?.startsWith("#")) {
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
         }
-      }
+      });
     });
-  });
 </script>

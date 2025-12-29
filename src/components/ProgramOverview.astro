@@ -59,77 +59,77 @@ const days = [
 
 <section id="schedule" class="bg-khipu-gray text-khipu-white py-12">
   <div class="content-container">
-  <h2 class="mb-10 text-center text-4xl font-bold md:text-6xl">
-    Program Overview
-  </h2>
+    <h2 class="mb-10 text-center text-4xl font-bold md:text-6xl">
+      Program Overview
+    </h2>
 
-  <!-- Day Tabs -->
-  <div class="mb-2 flex gap-6">
-    {
-      days.map((day, index) => (
-        <button
-          class:list={[
-            "day-tab text-2xl font-bold transition-colors md:text-3xl",
-            index === 0
-              ? "text-khipu-orange"
-              : "text-khipu-white hover:text-khipu-orange",
-          ]}
-          data-day={index}
-        >
-          {day.name}
-        </button>
-      ))
-    }
-  </div>
+    <!-- Day Tabs -->
+    <div class="mb-2 flex gap-6">
+      {
+        days.map((day, index) => (
+          <button
+            class:list={[
+              "day-tab text-2xl font-bold transition-colors md:text-3xl",
+              index === 0
+                ? "text-khipu-orange"
+                : "text-khipu-white hover:text-khipu-orange",
+            ]}
+            data-day={index}
+          >
+            {day.name}
+          </button>
+        ))
+      }
+    </div>
 
-  <!-- Separator Line -->
-  <div class="mb-8 h-px w-full bg-white/40"></div>
+    <!-- Separator Line -->
+    <div class="mb-8 h-px w-full bg-white/40"></div>
 
-  <!-- Day Content Panels Container -->
-  <div class="h-80 overflow-y-auto md:h-96">
-    {
-      days.map((day, index) => (
-        <div
-          class:list={[
-            "day-panel transition-opacity duration-300 ease-out",
-            index === 0 ? "opacity-100" : "hidden opacity-0",
-          ]}
-          data-day-panel={index}
-        >
-          {/* Day Theme */}
-          <h3 class="mb-8 text-center text-xl font-bold md:text-2xl">
-            {day.theme}
-          </h3>
+    <!-- Day Content Panels Container -->
+    <div class="h-80 overflow-y-auto md:h-96">
+      {
+        days.map((day, index) => (
+          <div
+            class:list={[
+              "day-panel transition-opacity duration-300 ease-out",
+              index === 0 ? "opacity-100" : "hidden opacity-0",
+            ]}
+            data-day-panel={index}
+          >
+            {/* Day Theme */}
+            <h3 class="mb-8 text-center text-xl font-bold md:text-2xl">
+              {day.theme}
+            </h3>
 
-          {/* Sessions */}
-          {day.sessions.map((session) => (
-            <div class="mb-8">
-              {/* Time Block Header */}
-              <div class="mb-6 flex items-center gap-4">
-                <div class="h-px flex-1 bg-white/40" />
-                <span class="text-xl italic md:text-2xl">
-                  {session.blockTime}
-                </span>
-                <div class="h-px flex-1 bg-white/40" />
+            {/* Sessions */}
+            {day.sessions.map((session) => (
+              <div class="mb-8">
+                {/* Time Block Header */}
+                <div class="mb-6 flex items-center gap-4">
+                  <div class="h-px flex-1 bg-white/40" />
+                  <span class="text-xl italic md:text-2xl">
+                    {session.blockTime}
+                  </span>
+                  <div class="h-px flex-1 bg-white/40" />
+                </div>
+
+                {/* Events */}
+                <div class="flex flex-col gap-4">
+                  {session.events.map((event) => (
+                    <div class="flex gap-6 md:gap-12">
+                      <span class="w-32 shrink-0 text-sm text-white/80 md:w-40 md:text-base">
+                        {event.time}
+                      </span>
+                      <span class="text-lg md:text-xl">{event.title}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
-
-              {/* Events */}
-              <div class="flex flex-col gap-4">
-                {session.events.map((event) => (
-                  <div class="flex gap-6 md:gap-12">
-                    <span class="w-32 shrink-0 text-sm text-white/80 md:w-40 md:text-base">
-                      {event.time}
-                    </span>
-                    <span class="text-lg md:text-xl">{event.title}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      ))
-    }
-  </div>
+            ))}
+          </div>
+        ))
+      }
+    </div>
   </div>
 </section>
 

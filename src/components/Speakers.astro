@@ -19,25 +19,25 @@ const speakers = speakersData.map((speaker) => ({
 
 <section id="speakers" class="bg-khipu-black text-khipu-white py-16">
   <div class="content-container flex flex-col items-center">
-  <h2 class="mb-12 text-center text-4xl font-bold italic md:text-6xl">
-    Speakers
-  </h2>
+    <h2 class="mb-12 text-center text-4xl font-bold italic md:text-6xl">
+      Speakers
+    </h2>
 
-  <div class="flex w-full max-w-4xl flex-col gap-12">
-    {
-      speakers.map((speaker) => (
-        <SpeakerCard
-          name={speaker.name}
-          country={speaker.country}
-          institution={speaker.institution}
-          role={speaker.role}
-          description={speaker.description}
-          imageSrc={speaker.imageSrc}
-          github={speaker.github}
-          linkedin={speaker.linkedin}
-        />
-      ))
-    }
-  </div>
+    <div class="flex w-full max-w-4xl flex-col gap-12">
+      {
+        speakers.map((speaker) => (
+          <SpeakerCard
+            name={speaker.name}
+            country={speaker.country}
+            institution={speaker.institution}
+            role={speaker.role}
+            description={speaker.description}
+            imageSrc={speaker.imageSrc}
+            github={speaker.github}
+            linkedin={speaker.linkedin}
+          />
+        ))
+      }
+    </div>
   </div>
 </section>
