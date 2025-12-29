@@ -1,0 +1,43 @@
+---
+import SpeakerCard from "./SpeakerCard.astro";
+import speakersData from "../data/speakers.json";
+
+// Static imports for speaker images
+import corbatImage from "../assets/speakers/corbat.webp?url";
+
+// Image lookup map - add new speaker images here
+const imageMap: Record<string, string> = {
+  "corbat.webp": corbatImage,
+};
+
+// Map speakers with their resolved image paths
+const speakers = speakersData.map((speaker) => ({
+  ...speaker,
+  imageSrc: imageMap[speaker.image] || "",
+}));
+---
+
+<section
+  id="speakers"
+  class="bg-khipu-black text-khipu-white flex flex-col items-center px-6 py-16 md:px-16 lg:px-24"
+>
+  <h2 class="mb-12 text-center text-4xl font-bold italic md:text-5xl">
+    Speakers
+  </h2>
+
+  <div class="flex w-full max-w-4xl flex-col gap-12">
+    {speakers.map((speaker) => (
+      <SpeakerCard
+        name={speaker.name}
+        country={speaker.country}
+        institution={speaker.institution}
+        role={speaker.role}
+        description={speaker.description}
+        imageSrc={speaker.imageSrc}
+        github={speaker.github}
+        linkedin={speaker.linkedin}
+      />
+    ))}
+  </div>
+</section>
+
