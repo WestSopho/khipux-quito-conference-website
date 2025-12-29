@@ -3,9 +3,10 @@ import horizontalBar from "../assets/horizontal-lateral-bar.svg";
 import verticalBar from "../assets/vertical-lateral-bar.svg";
 ---
 
-<section
-  class="bg-khipu-gray text-khipu-white flex flex-col items-center justify-center gap-x-8 gap-y-8 px-4 py-8 md:flex-row md:items-stretch"
->
+<section class="bg-khipu-gray text-khipu-white py-8">
+  <div
+    class="content-container flex flex-col items-center justify-center gap-x-8 gap-y-8 md:flex-row md:items-stretch"
+  >
   <!-- Mobile: horizontal bar, partial width -->
   <img
     src={horizontalBar.src}
@@ -25,12 +26,12 @@ import verticalBar from "../assets/vertical-lateral-bar.svg";
     <h2 class="text-5xl font-bold md:text-6xl md:leading-tight">
       About the event
     </h2>
-    <p class="text-xl font-medium md:text-3xl">
+    <p class="text-xl font-semibold md:text-3xl">
       KHIPUx Quito is a 3-day hybrid event designed to advance the role of
       Artificial Intelligence in biological and medical imaging across Latin
       America.
     </p>
-    <p class="text-xl font-medium md:text-3xl">
+    <p class="text-xl font-semibold md:text-3xl">
       Hosted by <span class="text-udla-red"
         >Universidad de Las Américas (UDLA)</span
       >, it brings together students and early-career researchers from fields
@@ -39,12 +40,13 @@ import verticalBar from "../assets/vertical-lateral-bar.svg";
       collaborative hackathon developing open-source AI tools for regional
       health challenges.
     </p>
-    <ul class="list-inside list-disc text-xl font-medium md:text-3xl">
+    <ul class="list-inside list-disc text-xl font-semibold md:text-3xl">
       <p class="text-xl md:text-3xl">Key Themes:</p>
       <li>AI for bioimage and medical imaging</li>
       <li>Ethical AI and data sovereignty</li>
       <li>Open science and regional collaboration</li>
       <li>Empowering Latin American talent</li>
     </ul>
+  </div>
   </div>
 </section>

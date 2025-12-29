@@ -4,11 +4,10 @@ import KhipuCircle from "../assets/khipu-circle.svg";
 ---
 
 <!-- Desktop Navigation -->
-<nav
-  class="bg-khipu-black sticky top-0 z-50 mx-auto hidden w-full items-center gap-x-4 overflow-hidden px-8 py-4 md:flex"
->
-  <!-- Logo and Text -->
-  <div class="flex shrink-0 items-center gap-x-8">
+<nav class="bg-khipu-black sticky top-0 z-50 hidden w-full overflow-hidden py-4 md:block">
+  <div class="content-container flex items-center gap-x-4">
+    <!-- Logo and Text -->
+    <div class="flex shrink-0 items-center gap-x-8">
     <KhipuLogo
       class="text-khipu-orange h-20 w-auto origin-center -rotate-90"
       role="img"
@@ -38,5 +37,6 @@ import KhipuCircle from "../assets/khipu-circle.svg";
     >
       Register Now!
     </button>
+  </div>
   </div>
 </nav>

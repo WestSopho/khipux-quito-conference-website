@@ -5,8 +5,9 @@ import Close from "../assets/close.svg";
 ---
 
 <!-- Mobile Navigation -->
-<nav class="bg-khipu-black sticky top-0 z-50 flex p-4 md:hidden">
-  <div class="flex grow items-center justify-center gap-x-8">
+<nav class="bg-khipu-black sticky top-0 z-50 py-4 md:hidden">
+  <div class="content-container flex items-center">
+    <div class="flex grow items-center justify-center gap-x-8">
     <KhipuLogo
       class="text-khipu-orange h-20 w-auto origin-center -rotate-90"
       role="img"
@@ -14,14 +15,16 @@ import Close from "../assets/close.svg";
     />
     <p class="text-khipu-white text-2xl font-bold text-nowrap">KHIPUx Quito</p>
   </div>
-  <!-- Arrow Icon for the menu -->
-  <div class="flex items-center justify-center">
-    <button
-      id="open-menu-button"
-      class="text-khipu-white flex items-center justify-end p-2 font-bold"
-    >
-      <Bars class="text-khipu-orange h-8 w-auto" role="img" aria-label="Bars" />
-    </button>
+    <!-- Arrow Icon for the menu -->
+    <div class="flex items-center justify-center">
+      <button
+        id="open-menu-button"
+        class="text-khipu-white flex items-center justify-end p-2 font-bold"
+      >
+        <Bars class="text-khipu-orange h-8 w-auto" role="img" aria-label="Bars" />
+      </button>
+    </div>
+  </div>
   </div>
 </nav>
 
