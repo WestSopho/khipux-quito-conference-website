@@ -6,7 +6,8 @@
     "institution": "Universidad Galileo",
     "role": "Director, Biomedical Engineering Institute",
     "description": "Director of the Biomedical Engineering Institute and founder of BiomedLab at Universidad Galileo. She holds a PhD in Biomedical Engineering from TU Graz and has research experience in artificial intelligence applied to medical image analysis. She currently leads initiatives aimed at strengthening health technology in Guatemala.",
-    "image": "lara.webp"
+    "image": "lara.webp",
+    "linkedin": "https://www.linkedin.com/in/andrea-lara-/"
   },
   {
     "id": "diana-mosquera",
@@ -29,5 +30,16 @@
     "image": "corbat.webp",
     "github": "https://github.com/acorbat",
     "linkedin": "https://www.linkedin.com/in/agust%C3%ADn-andr%C3%A9s-corbat-1a7a6b89/"
+  },
+  {
+    "id": "hernan-morales",
+    "name": "Hernán Morales-Navarrete, PhD",
+    "country": "Ecuador",
+    "institution": "Universidad de Las Américas – UDLA",
+    "role": "Computational Bioimage Scientist",
+    "description": "Computational bioimage scientist with a PhD from the Max Planck Institute of Molecular Cell Biology and Genetics, specializing in quantitative image analysis, machine learning, and AI-driven modeling of biological systems. His research focuses on decoding tissue and developmental organization from 2D and 3D microscopy data using interpretable deep learning and physics-inspired approaches. He has contributed to pioneering work in computational embryology and tissue modeling, including studies recognized as Method of the Year by Nature Methods. Currently, he leads research and training initiatives in bioimage analysis and AI in Ecuador, promoting open science, FAIR data practices, and capacity building across Latin America.",
+    "image": "morales.webp",
+    "github": "https://github.com/hernanmorales-navarrete",
+    "linkedin": "https://ec.linkedin.com/in/hernanandresmoralesnavarrete"
   }
 ]
