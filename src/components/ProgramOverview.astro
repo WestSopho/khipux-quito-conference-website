@@ -1,57 +1,94 @@
 ---
+import bulletpoint1 from "../assets/desc-bulletpoint-1.svg";
+import bulletpoint2 from "../assets/desc-bulletpoint-2.svg";
+import bulletpoint3 from "../assets/desc-bulletpoint-3.svg";
+import khipuCircle from "../assets/khipu-circle.svg";
+import khipuSquare from "../assets/khipu-square.svg";
+
 const days = [
   {
     name: "Day 1",
-    theme: "Foundations & Regional Landscape",
-    sessions: [
+    theme: "Foundations and Regional Landscape",
+    bulletpoint: bulletpoint1,
+    items: [
+      { title: "Welcome session and opening remarks" },
       {
-        blockTime: "7:00 am",
-        events: [
-          { time: "7:00 AM - 8:30AM", title: "Opening & Welcome" },
-          {
-            time: "7:00 AM - 8:30AM",
-            title:
-              "Keynote Lecture: The future of AI in biomedical research in Latin America",
-          },
-          {
-            time: "7:00 AM - 8:30AM",
-            title:
-              "Panel Discussion: Building regional capacity in AI for bio and medical imaging",
-          },
+        title:
+          'Keynote Lecture (TBD) – "The future of AI in biomedical research in Latin America"',
+        note: "invited speaker",
+      },
+      {
+        title:
+          'Panel Discussion – "Building regional capacity in AI for bio and medical imaging"',
+        panellists: [
+          "Andrea Lara (Guatemala, Universidad Galileo)",
+          "Agustín Corbat (Universidad de Buenos Aires)",
+          "Hernán Morales-Navarrete (Ecuador, UDLA)",
+          "David Brito (Solca)",
         ],
+      },
+      {
+        title: "Poster session",
+        note: "Presentations from selected student and early-career participants",
+      },
+      {
+        title: "Networking Mixer",
+        note: "Facilitated community-building space with interdisciplinary round tables",
       },
     ],
   },
   {
     name: "Day 2",
-    theme: "Hands-On Workshops",
-    sessions: [
+    theme: "Technical Training and Scientific Exchange",
+    bulletpoint: bulletpoint2,
+    items: [
       {
-        blockTime: "9:00 am",
-        events: [
+        title: "Expert Lectures and Workshops",
+        workshops: [
           {
-            time: "9:00 AM - 12:00PM",
-            title:
-              "Workshop: Introduction to Deep Learning for Medical Imaging",
+            topic: "Artificial intelligence for medical image analysis",
+            speaker: "Andrea Lara",
+          },
+          {
+            topic: "Introduction to bioimage analysis",
+            speaker: "Agustín Corbat",
+          },
+          {
+            topic: "AI models for bioimage analysis",
+            speaker: "Hernán Morales-Navarrete",
           },
         ],
+      },
+      {
+        title: "Poster session",
+        note: "Presentations from selected student and early-career participants",
+      },
+      {
+        title: "Mentorship circles",
+        note: "Topic-based small group mentoring with guest speakers",
+      },
+      {
+        title: "Community dinner",
+        note: "Informal gathering to foster networking and trust",
       },
     ],
   },
   {
     name: "Day 3",
-    theme: "Hackathon & Closing",
-    sessions: [
+    theme: "Ethical AI and Hackathon",
+    bulletpoint: bulletpoint3,
+    items: [
       {
-        blockTime: "8:00 am",
-        events: [
-          {
-            time: "8:00 AM - 5:00PM",
-            title:
-              "Hackathon: Open-source AI tools for regional health challenges",
-          },
-        ],
+        title:
+          'Roundtable – "Ethical AI, equity, and data sovereignty in Latin America"',
+        note: "Moderated by Diana Mosquera (Diversa) (TBC), with invited representatives from multiple disciplines",
       },
+      {
+        title: "Hackathon launch",
+        note: "Teams develop AI-based tools for regionally relevant bioimage or medical imaging problems (data provided)",
+      },
+      { title: "Hackathon showcase & jury evaluation" },
+      { title: "Award ceremony and closing" },
     ],
   },
 ];
@@ -86,7 +123,7 @@ const days = [
     <div class="mb-8 h-px w-full bg-white/40"></div>
 
     <!-- Day Content Panels Container -->
-    <div class="h-80 overflow-y-auto md:h-96">
+    <div class="min-h-[28rem] md:min-h-[32rem]">
       {
         days.map((day, index) => (
           <div
@@ -96,36 +133,76 @@ const days = [
             ]}
             data-day-panel={index}
           >
-            {/* Day Theme */}
-            <h3 class="mb-8 text-center text-xl font-bold md:text-2xl">
-              {day.theme}
-            </h3>
+            {/* Day Theme with Bulletpoint */}
+            <div class="mb-8 flex items-center justify-center gap-4">
+              <img
+                src={day.bulletpoint.src}
+                alt=""
+                class="h-12 w-auto opacity-80 md:h-16"
+              />
+              <h3 class="text-center text-xl font-bold md:text-2xl">
+                {day.theme}
+              </h3>
+              <img
+                src={day.bulletpoint.src}
+                alt=""
+                class="h-12 w-auto opacity-80 md:h-16"
+                style="transform: scaleX(-1)"
+              />
+            </div>
 
-            {/* Sessions */}
-            {day.sessions.map((session) => (
-              <div class="mb-8">
-                {/* Time Block Header */}
-                <div class="mb-6 flex items-center gap-4">
-                  <div class="h-px flex-1 bg-white/40" />
-                  <span class="text-xl italic md:text-2xl">
-                    {session.blockTime}
-                  </span>
-                  <div class="h-px flex-1 bg-white/40" />
-                </div>
-
-                {/* Events */}
-                <div class="flex flex-col gap-4">
-                  {session.events.map((event) => (
-                    <div class="flex gap-6 md:gap-12">
-                      <span class="w-32 shrink-0 text-sm text-white/80 md:w-40 md:text-base">
-                        {event.time}
+            {/* Items */}
+            <ul class="space-y-4">
+              {day.items.map((item) => (
+                <li class="flex gap-3">
+                  <img src={khipuCircle.src} alt="" class="bullet-orange mt-1 h-6 w-6 shrink-0" />
+                  <div class="flex-1">
+                    <span class="text-lg font-medium md:text-xl">
+                      {item.title}
+                    </span>
+                    {item.note && (
+                      <span class="ml-2 text-base text-white/70 md:text-lg">
+                        — {item.note}
                       </span>
-                      <span class="text-lg md:text-xl">{event.title}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
+                    )}
+
+                    {/* Panellists */}
+                    {item.panellists && (
+                      <div class="mt-2 ml-4">
+                        <span class="text-base text-white/80">Panellists:</span>
+                        <ul class="mt-1 space-y-2">
+                          {item.panellists.map((panellist) => (
+                            <li class="flex items-center gap-4 text-base text-white/70">
+                              <img src={khipuSquare.src} alt="" class="bullet-orange h-5 w-5 shrink-0 rotate-45" />
+                              {panellist}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    {/* Workshops */}
+                    {item.workshops && (
+                      <ul class="mt-2 ml-4 space-y-2">
+                        {item.workshops.map((workshop) => (
+                          <li class="flex items-start gap-4">
+                            <img src={khipuSquare.src} alt="" class="bullet-orange mt-1 h-5 w-5 shrink-0 rotate-45" />
+                            <div>
+                              <span class="text-base text-white/90 md:text-lg">
+                                {workshop.topic}
+                              </span>
+                              <span class="text-khipu-orange ml-2 text-base">
+                                — {workshop.speaker}
+                              </span>
+                            </div>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
         ))
       }
@@ -172,3 +249,10 @@ const days = [
     });
   });
 </script>
+
+<style>
+  .bullet-orange {
+    filter: brightness(0) saturate(100%) invert(47%) sepia(78%) saturate(1057%)
+      hue-rotate(339deg) brightness(94%) contrast(92%);
+  }
+</style>
