@@ -1,52 +1,74 @@
 ---
-import horizontalBar from "../assets/horizontal-lateral-bar.svg";
-import verticalBar from "../assets/vertical-lateral-bar.svg";
+const keyThemes = [
+  {
+    title: "AI for Bioimage & Medical Imaging",
+    description: "Advancing diagnostic tools and research through cutting-edge artificial intelligence",
+    icon: "🧬",
+  },
+  {
+    title: "Ethical AI & Data Sovereignty",
+    description: "Building responsible frameworks that respect regional autonomy and privacy",
+    icon: "⚖️",
+  },
+  {
+    title: "Open Science & Collaboration",
+    description: "Fostering transparent research and cross-border partnerships across Latin America",
+    icon: "🌐",
+  },
+  {
+    title: "Empowering Regional Talent",
+    description: "Nurturing the next generation of Latin American AI researchers and practitioners",
+    icon: "🚀",
+  },
+];
 ---
 
-<section id="about" class="bg-khipu-gray text-khipu-white py-8">
-  <div
-    class="content-container flex flex-col items-center justify-center gap-x-8 gap-y-8 md:flex-row md:items-stretch"
-  >
-    <!-- Mobile: horizontal bar, partial width -->
-    <img
-      src={horizontalBar.src}
-      alt="Lateral Bar"
-      class="h-auto w-3/4 md:hidden"
-    />
-    <!-- Desktop: vertical bar -->
-    <img
-      src={verticalBar.src}
-      alt="Lateral Bar"
-      class="hidden h-auto w-24 shrink-0 md:block"
-    />
-    <!-- Content -->
-    <div
-      class="flex flex-col justify-center gap-y-4 text-center text-lg font-semibold md:text-left"
-    >
-      <h2 class="text-4xl font-bold md:text-6xl md:leading-tight">
-        About the event
+<section id="about" class="bg-khipu-gray text-khipu-white py-16 md:py-24">
+  <div class="content-container">
+
+    <!-- Full-Width Intro -->
+    <div class="mb-12 max-w-4xl">
+      <h2 class="mb-6 text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
+        About the <span class="text-khipu-orange">Event</span>
       </h2>
-      <p class="text-lg font-semibold md:text-xl">
-        KHIPUx Quito is a 3-day hybrid event designed to advance the role of
-        Artificial Intelligence in biological and medical imaging across Latin
-        America.
+      
+      <p class="mb-5 text-lg font-semibold leading-relaxed md:text-xl">
+        KHIPUx Quito is a <span class="text-khipu-orange">3-day hybrid event</span> designed to advance 
+        the role of Artificial Intelligence in biological and medical imaging across Latin America.
       </p>
-      <p class="text-lg font-semibold md:text-xl">
-        Hosted by <span class="text-uide-orange"
-          >Universidad Internacional del Ecuador (UIDE)</span
-        >, it brings together students and early-career researchers from fields
-        such as biology, medicine, data science, and AI.Participants will engage
-        in expert-led lectures, technical workshops, poster sessions, and a
-        collaborative hackathon developing open-source AI tools for regional
-        health challenges.
+      
+      <p class="text-base leading-relaxed text-white/80 md:text-lg">
+        Hosted by <span class="font-bold text-uide-orange">Universidad Internacional del Ecuador (UIDE)</span>, 
+        we bring together students and early-career researchers from biology, medicine, 
+        data science, and AI. Engage in expert-led lectures, technical workshops, 
+        poster sessions, and a collaborative hackathon developing open-source AI tools 
+        for regional health challenges.
       </p>
-      <ul class="list-inside list-disc text-lg font-semibold md:text-xl">
-        <p class="text-lg md:text-xl">Key Themes:</p>
-        <li>AI for bioimage and medical imaging</li>
-        <li>Ethical AI and data sovereignty</li>
-        <li>Open science and regional collaboration</li>
-        <li>Empowering Latin American talent</li>
-      </ul>
     </div>
+
+    <!-- Key Themes Section -->
+    <div>
+      <h3 class="mb-8 text-xl font-bold uppercase tracking-wider text-khipu-orange md:text-2xl">
+        Key Themes
+      </h3>
+      
+      <!-- Horizontal cards - 2x2 grid on desktop -->
+      <div class="grid gap-4 md:grid-cols-2 lg:gap-6">
+        {keyThemes.map((theme) => (
+          <div class="flex items-center gap-5 border-l-4 border-khipu-orange bg-white/10 px-5 py-4 transition-transform duration-200 hover:-translate-y-1">
+            <span class="text-4xl">{theme.icon}</span>
+            <div class="flex-1">
+              <h4 class="text-base font-bold text-khipu-white md:text-lg">
+                {theme.title}
+              </h4>
+              <p class="text-sm leading-relaxed text-white/70">
+                {theme.description}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
   </div>
 </section>
