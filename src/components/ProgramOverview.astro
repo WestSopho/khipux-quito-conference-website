@@ -2,7 +2,6 @@
 import bulletpoint1 from "../assets/desc-bulletpoint-1.svg";
 import bulletpoint2 from "../assets/desc-bulletpoint-2.svg";
 import bulletpoint3 from "../assets/desc-bulletpoint-3.svg";
-import khipuCircle from "../assets/khipu-circle.svg";
 import khipuSquare from "../assets/khipu-square.svg";
 
 const days = [
@@ -97,18 +96,18 @@ const days = [
 <section id="schedule" class="bg-khipu-gray text-khipu-white py-12">
   <div class="content-container">
     <h2 class="mb-10 text-center text-4xl font-bold md:text-6xl">
-      Program Overview
+      Program <span class="text-khipu-orange">Overview</span>
     </h2>
 
     <!-- Day Tabs -->
-    <div class="mb-2 flex gap-6">
+    <div class="mb-8 flex gap-6">
       {
         days.map((day, index) => (
           <button
             class:list={[
-              "day-tab text-2xl font-bold transition-colors md:text-3xl",
+              "day-tab relative pb-2 text-2xl font-bold transition-colors md:text-3xl",
               index === 0
-                ? "text-khipu-orange"
+                ? "text-khipu-orange active"
                 : "text-khipu-white hover:text-khipu-orange",
             ]}
             data-day={index}
@@ -118,9 +117,6 @@ const days = [
         ))
       }
     </div>
-
-    <!-- Separator Line -->
-    <div class="mb-8 h-px w-full bg-white/40"></div>
 
     <!-- Day Content Panels Container -->
     <div class="min-h-[28rem] md:min-h-[32rem]">
@@ -151,66 +147,70 @@ const days = [
               />
             </div>
 
-            {/* Items */}
-            <ul class="space-y-4">
+            {/* Items - Timeline */}
+            <ul class="timeline relative ml-4 space-y-1 md:ml-6">
               {day.items.map((item) => (
-                <li class="flex gap-3">
-                  <img
-                    src={khipuCircle.src}
-                    alt=""
-                    class="bullet-orange mt-1 h-6 w-6 shrink-0"
-                  />
-                  <div class="flex-1">
-                    <span class="text-lg font-medium md:text-xl">
-                      {item.title}
-                    </span>
-                    {item.note && (
-                      <span class="ml-2 text-base text-white/70 md:text-lg">
-                        — {item.note}
-                      </span>
-                    )}
+                <li class="timeline-item group relative pl-10 md:pl-12">
+                  {/* Timeline dot */}
+                  <div class="timeline-dot absolute left-0 top-4 h-3 w-3 rounded-full bg-khipu-orange transition-all duration-300 group-hover:scale-150 group-hover:bg-khipu-white md:h-4 md:w-4"></div>
 
-                    {/* Panellists */}
-                    {item.panellists && (
-                      <div class="mt-2 ml-4">
-                        <span class="text-base text-white/80">Panellists:</span>
-                        <ul class="mt-1 space-y-2">
-                          {item.panellists.map((panellist) => (
-                            <li class="flex items-center gap-4 text-base text-white/70">
+                  {/* Content card with hover glow */}
+                  <div class="relative rounded-lg px-4 py-3 transition-all duration-300 group-hover:bg-white/5">
+                    {/* Glow effect */}
+                    <div class="pointer-events-none absolute -inset-1 rounded-lg bg-khipu-orange/0 blur-xl transition-all duration-500 group-hover:bg-khipu-orange/10"></div>
+                    
+                    <div class="relative">
+                      <span class="text-lg font-semibold md:text-xl">
+                        {item.title}
+                      </span>
+                      {item.note && (
+                        <span class="ml-2 text-base text-white/70 md:text-lg">
+                          — {item.note}
+                        </span>
+                      )}
+
+                      {/* Panellists */}
+                      {item.panellists && (
+                        <div class="mt-3 ml-2">
+                          <span class="text-sm font-semibold uppercase tracking-wide text-khipu-orange">Panellists:</span>
+                          <ul class="mt-2 space-y-2">
+                            {item.panellists.map((panellist) => (
+                              <li class="flex items-center gap-3 text-base text-white/80">
+                                <img
+                                  src={khipuSquare.src}
+                                  alt=""
+                                  class="bullet-orange h-4 w-4 shrink-0 rotate-45"
+                                />
+                                {panellist}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+
+                      {/* Workshops */}
+                      {item.workshops && (
+                        <ul class="mt-3 ml-2 space-y-2">
+                          {item.workshops.map((workshop) => (
+                            <li class="flex items-start gap-3">
                               <img
                                 src={khipuSquare.src}
                                 alt=""
-                                class="bullet-orange h-5 w-5 shrink-0 rotate-45"
+                                class="bullet-orange mt-1 h-4 w-4 shrink-0 rotate-45"
                               />
-                              {panellist}
+                              <div>
+                                <span class="text-base text-white/90 md:text-lg">
+                                  {workshop.topic}
+                                </span>
+                                <span class="text-khipu-orange ml-2 text-base font-semibold">
+                                  — {workshop.speaker}
+                                </span>
+                              </div>
                             </li>
                           ))}
                         </ul>
-                      </div>
-                    )}
-
-                    {/* Workshops */}
-                    {item.workshops && (
-                      <ul class="mt-2 ml-4 space-y-2">
-                        {item.workshops.map((workshop) => (
-                          <li class="flex items-start gap-4">
-                            <img
-                              src={khipuSquare.src}
-                              alt=""
-                              class="bullet-orange mt-1 h-5 w-5 shrink-0 rotate-45"
-                            />
-                            <div>
-                              <span class="text-base text-white/90 md:text-lg">
-                                {workshop.topic}
-                              </span>
-                              <span class="text-khipu-orange ml-2 text-base">
-                                — {workshop.speaker}
-                              </span>
-                            </div>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
+                      )}
+                    </div>
                   </div>
                 </li>
               ))}
@@ -235,10 +235,10 @@ const days = [
 
       // Update tabs
       tabs.forEach((t) => {
-        t.classList.remove("text-khipu-orange");
+        t.classList.remove("text-khipu-orange", "active");
         t.classList.add("text-khipu-white");
       });
-      tab.classList.add("text-khipu-orange");
+      tab.classList.add("text-khipu-orange", "active");
       tab.classList.remove("text-khipu-white");
 
       // Fade out all panels
@@ -266,5 +266,50 @@ const days = [
   .bullet-orange {
     filter: brightness(0) saturate(100%) invert(47%) sepia(78%) saturate(1057%)
       hue-rotate(339deg) brightness(94%) contrast(92%);
+  }
+
+  .day-tab::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--color-khipu-orange);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+
+  .day-tab.active::after {
+    transform: scaleX(1);
+  }
+
+  .day-tab:hover::after {
+    transform: scaleX(0.5);
+  }
+
+  .day-tab.active:hover::after {
+    transform: scaleX(1);
+  }
+
+  /* Timeline vertical line */
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 1.5rem;
+    bottom: 1.5rem;
+    width: 2px;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.1)
+    );
+  }
+
+  @media (min-width: 768px) {
+    .timeline::before {
+      left: 7px;
+    }
   }
 </style>
