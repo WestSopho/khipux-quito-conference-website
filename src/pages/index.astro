@@ -11,6 +11,9 @@ import Speakers from "../components/Speakers.astro";
 import Partners from "../components/Partners.astro";
 import Venue from "../components/Venue.astro";
 import Footer from "../components/Footer.astro";
+
+// Import hero images for preload
+import heroMobile from "../assets/hero-image-mobile.webp";
 ---
 
 <!doctype html>
@@ -23,6 +26,16 @@ import Footer from "../components/Footer.astro";
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
+    <!-- Preload LCP hero image for mobile -->
+    <link
+      rel="preload"
+      as="image"
+      href={heroMobile.src}
+      type="image/webp"
+      media="(max-width: 767px)"
+      fetchpriority="high"
+    />
+    
     <!-- Optimized font loading with display=swap for better CLS -->
     <link
       rel="preload"
