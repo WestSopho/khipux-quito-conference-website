@@ -35,8 +35,11 @@ const {
 
     <img
       src={imageSrc}
-      alt={name}
+      alt={`Photo of ${name}`}
       loading="lazy"
+      decoding="async"
+      width="224"
+      height="224"
       class="speaker-image border-khipu-orange group-hover:shadow-khipu-orange/30 relative aspect-square w-full rounded-sm border-l-4 object-cover shadow-lg transition-all duration-500 ease-out group-hover:-translate-x-3 group-hover:scale-105 group-hover:shadow-2xl"
     />
   </div>

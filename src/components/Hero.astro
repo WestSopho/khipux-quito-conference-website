@@ -1,5 +1,6 @@
 ---
 // Hero component with responsive background images and overlay
+import { Image } from "astro:assets";
 import heroDesktop from "../assets/hero-image-desktop.webp";
 import heroMobile from "../assets/hero-image-mobile.webp";
 ---
@@ -7,17 +8,29 @@ import heroMobile from "../assets/hero-image-mobile.webp";
 <section
   class="hero relative flex min-h-[80vh] w-full items-center justify-center overflow-hidden"
 >
-  <!-- Desktop Background Image -->
-  <img
-    src={heroDesktop.src}
-    alt="KhipuX Quito Conference"
+  <!-- Desktop Background Image - LCP element with high priority -->
+  <Image
+    src={heroDesktop}
+    alt="KhipuX Quito Conference venue and attendees"
     class="absolute inset-0 hidden h-full w-full object-cover md:block"
+    loading="eager"
+    fetchpriority="high"
+    decoding="async"
+    quality={80}
+    widths={[768, 1024, 1280, 1920]}
+    sizes="100vw"
   />
-  <!-- Mobile Background Image -->
-  <img
-    src={heroMobile.src}
-    alt="KhipuX Quito Conference"
+  <!-- Mobile Background Image - LCP element with high priority -->
+  <Image
+    src={heroMobile}
+    alt="KhipuX Quito Conference venue and attendees"
     class="absolute inset-0 block h-full w-full object-cover md:hidden"
+    loading="eager"
+    fetchpriority="high"
+    decoding="async"
+    quality={80}
+    widths={[320, 480, 640, 768]}
+    sizes="100vw"
   />
 
   <!-- Overlay -->

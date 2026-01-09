@@ -13,4 +13,26 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  // Image optimization settings
+  image: {
+    // Use Sharp for image optimization (default in Astro 5)
+    service: {
+      entrypoint: "astro/assets/services/sharp",
+      config: {
+        limitInputPixels: false,
+      },
+    },
+  },
+  // Build optimizations
+  build: {
+    // Inline small assets to reduce HTTP requests
+    inlineStylesheets: "auto",
+  },
+  // Prefetch configuration for faster navigation
+  prefetch: {
+    prefetchAll: false,
+    defaultStrategy: "viewport",
+  },
+  // Compress HTML output
+  compressHTML: true,
 });
