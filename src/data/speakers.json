@@ -10,15 +10,13 @@
     "linkedin": "https://www.linkedin.com/in/andrea-lara-/"
   },
   {
-    "id": "diana-mosquera",
-    "name": "Diana Mosquera",
-    "country": "Ecuador",
-    "institution": "Diversa",
-    "role": "Leader in Human-Centered AI",
-    "description": "Leader in human and nature-centered AI with over 10 years of experience developing ethical and socially innovative technology projects. Specialist in data justice and AI ethics, she combines technical expertise with social commitment to drive a more just, transparent, and humane digital transformation. She leads multidisciplinary teams with strategic vision and a focus on sustainable regional impact.",
-    "image": "mosquera.webp",
-    "github": "https://github.com/DiversaStudio",
-    "linkedin": "https://ec.linkedin.com/company/diversa-ai"
+    "id": "catherine-dignazio",
+    "name": "Catherine D'Ignazio",
+    "country": "United States",
+    "institution": "MIT",
+    "role": "Associate Professor of Urban Science and Planning",
+    "description": "Associate Professor of Urban Science and Planning in the Department of Urban Studies and Planning at MIT. She is also Director of the Data + Feminism Lab which uses data and computational methods to work towards gender and racial justice, particularly as they relate to space and place.",
+    "image": "dignazio.webp"
   },
   {
     "id": "agustin-corbat",
@@ -30,6 +28,17 @@
     "image": "corbat.webp",
     "github": "https://github.com/acorbat",
     "linkedin": "https://www.linkedin.com/in/agust%C3%ADn-andr%C3%A9s-corbat-1a7a6b89/"
+  },
+  {
+    "id": "diana-mosquera",
+    "name": "Diana Mosquera",
+    "country": "Ecuador",
+    "institution": "Diversa",
+    "role": "Leader in Human-Centered AI",
+    "description": "Leader in human and nature-centered AI with over 10 years of experience developing ethical and socially innovative technology projects. Specialist in data justice and AI ethics, she combines technical expertise with social commitment to drive a more just, transparent, and humane digital transformation. She leads multidisciplinary teams with strategic vision and a focus on sustainable regional impact.",
+    "image": "mosquera.webp",
+    "github": "https://github.com/DiversaStudio",
+    "linkedin": "https://ec.linkedin.com/company/diversa-ai"
   },
   {
     "id": "hernan-morales",
