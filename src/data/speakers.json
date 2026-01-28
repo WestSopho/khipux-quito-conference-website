@@ -50,5 +50,32 @@
     "image": "morales.webp",
     "github": "https://github.com/hernanmorales-navarrete",
     "linkedin": "https://ec.linkedin.com/in/hernanandresmoralesnavarrete"
+  },
+  {
+    "id": "cheryl-martens",
+    "name": "Cheryl Martens, PhD",
+    "country": "Ecuador",
+    "institution": "Universidad San Francisco de Quito",
+    "role": "Director, Institute for Advanced Studies in Inequalities",
+    "description": "Director of the Institute for Advanced Studies in Inequalities and Professor of Sociology at the University of San Francisco de Quito. She holds a PhD in Sociology from the University of Manchester and her research focuses on the sociology and political economy of communication, media politics, and digital activism in South America. Her publications in the field of communication include \"Questioning Technology in South America\" in Thesis Eleven journal and three co-edited collections: Digital Activism, Community Media and Sustainable Communication from Palgrave MacMillan (in English) and the Universidad del Valle and USFQ Press publications (in Spanish), Strategies for Media Reform: International Perspectives (Fordham University Press), and The International Political Economy of Communication: Media and Power in South America (Palgrave MacMillan).",
+    "image": "martens.webp"
+  },
+  {
+    "id": "ola-bini",
+    "name": "Ola Bini",
+    "country": "Sweden",
+    "institution": "Center for Digital Autonomy",
+    "role": "Principal Security Analyst",
+    "description": "Swedish expert in programming and cybersecurity with over 30 years of experience, recognized for having been part of the expert group that developed the Java language. Founder of organizations such as the Center for Digital Autonomy and Digital Security EC, he currently stands out as a principal security analyst in Ecuador, where he conducts high-level audits and incident response. In addition to being the author of two technical books and an active contributor to Free Software, he holds elite international certifications (such as OSCP and CEH) and is a prestigious global speaker who has shared his knowledge in forums such as Google TechTalks and at leading Ecuadorian universities.",
+    "image": "bini.webp"
+  },
+  {
+    "id": "andres-dominguez",
+    "name": "Andrés Domínguez Hernández",
+    "country": "United Kingdom",
+    "institution": "Alan Turing Institute",
+    "role": "Ethics Fellow",
+    "description": "Ethics Fellow at the Alan Turing Institute and a Visiting Senior Lecturer at the Digital Environment Research Institute at Queen Mary University of London. He is an interdisciplinary scholar studying the ethics, governance, and societal implications of emerging and digital technologies. He has a track record of collaborating with computer scientists, engineers, creative practitioners, designers, and policymakers toward fostering more equitable, sustainable, and plural digital futures.",
+    "image": "dominguez.webp"
   }
 ]
