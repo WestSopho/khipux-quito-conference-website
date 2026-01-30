@@ -2,18 +2,18 @@
 import SpeakerCard from "./SpeakerCard.astro";
 import speakersData from "../data/speakers.json";
 
-// Static imports for speaker images
-import laraImage from "../assets/speakers/lara.webp?url";
-import dignazioImage from "../assets/speakers/dignazio.webp?url";
-import mosqueraImage from "../assets/speakers/mosquera.webp?url";
-import corbatImage from "../assets/speakers/corbat.webp?url";
-import moralesImage from "../assets/speakers/morales.webp?url";
-import martensImage from "../assets/speakers/martens.webp?url";
-import biniImage from "../assets/speakers/bini.webp?url";
-import dominguezImage from "../assets/speakers/dominguez.webp?url";
+// Static imports for speaker images (without ?url for Image optimization)
+import laraImage from "../assets/speakers/lara.webp";
+import dignazioImage from "../assets/speakers/dignazio.webp";
+import mosqueraImage from "../assets/speakers/mosquera.webp";
+import corbatImage from "../assets/speakers/corbat.webp";
+import moralesImage from "../assets/speakers/morales.webp";
+import martensImage from "../assets/speakers/martens.webp";
+import biniImage from "../assets/speakers/bini.webp";
+import dominguezImage from "../assets/speakers/dominguez.webp";
 
 // Image lookup map - add new speaker images here
-const imageMap: Record<string, string> = {
+const imageMap: Record<string, any> = {
   "lara.webp": laraImage,
   "dignazio.webp": dignazioImage,
   "mosquera.webp": mosqueraImage,
@@ -24,7 +24,7 @@ const imageMap: Record<string, string> = {
   "dominguez.webp": dominguezImage,
 };
 
-// Map speakers with their resolved image paths
+// Map speakers with their resolved image objects
 const speakers = speakersData.map((speaker) => ({
   ...speaker,
   imageSrc: imageMap[speaker.image] || "",

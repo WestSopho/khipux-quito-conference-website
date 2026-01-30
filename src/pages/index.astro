@@ -50,6 +50,8 @@ import heroMobile from "../assets/hero-image-mobile.webp";
       type="image/webp"
       media="(max-width: 767px)"
       fetchpriority="high"
+      imagesrcset={`${heroMobile.src} 640w`}
+      imagesizes="100vw"
     />
 
     <!-- Optimized font loading with display=swap for better CLS -->
@@ -70,6 +72,20 @@ import heroMobile from "../assets/hero-image-mobile.webp";
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap"
       />
     </noscript>
+    
+    <!-- Font fallback to reduce CLS -->
+    <style>
+      @font-face {
+        font-family: 'Montserrat Fallback';
+        font-style: normal;
+        font-weight: 400;
+        src: local('Arial');
+        ascent-override: 104%;
+        descent-override: 28%;
+        line-gap-override: 0%;
+        size-adjust: 95%;
+      }
+    </style>
 
     <link
       rel="icon"

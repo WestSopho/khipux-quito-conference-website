@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+
 interface Props {
   name: string;
   country: string;
@@ -33,13 +35,16 @@ const {
     >
     </div>
 
-    <img
+    <Image
       src={imageSrc}
       alt={`Photo of ${name}`}
       loading="lazy"
       decoding="async"
-      width="224"
-      height="224"
+      width={400}
+      height={400}
+      widths={[224, 300, 400]}
+      sizes="(max-width: 768px) 192px, 224px"
+      quality={85}
       class="speaker-image border-khipu-orange group-hover:shadow-khipu-orange/30 relative aspect-square w-full rounded-sm border-l-4 object-cover shadow-lg transition-all duration-500 ease-out group-hover:-translate-x-3 group-hover:scale-105 group-hover:shadow-2xl"
     />
   </div>
